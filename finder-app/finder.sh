@@ -24,7 +24,6 @@ while IFS= read -r -d '' file; do
     if [ -f "$file" ]; then
         match_lines=$(grep -c "$searchstr" "$file")
         if [ "$match_lines" -gt 0 ]; then
-            echo "Matches found in $file: $match_lines lines"
             match_count=$((match_count + match_lines))
         fi
     fi
